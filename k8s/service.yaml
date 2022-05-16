@@ -3,14 +3,14 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: ctsefrontend
-  name: ctsefrontend
+    app: frontend
+  name: frontend
 spec:
   ports:
     - port: 3000
       protocol: TCP
       targetPort: 3000
   selector:
-    app: ctsefrontend
+    app: frontend
 status:
   loadBalancer: {}
