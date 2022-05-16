@@ -20,7 +20,7 @@ class Products extends Component {
       }
     
       async retrive_inventorys() {
-        await axios.get(`${window.backendapi2}/inventory/inventories`).then((res) => {
+        await axios.get(`${window.backendapi2}/inventory`).then((res) => {
           if (res.data.success) {
             this.setState({
                 inventory: res.data.inventories,
@@ -32,7 +32,7 @@ class Products extends Component {
     
       onDelete = (id) => {
         axios
-          .delete(`${window.backendapi2}/inventory/deleteinventory/${id}`)
+          .delete(`${window.backendapi2}/inventory/${id}`)
           .then((res) => {
             alert("Deleted Successfully...!");
             this.retrive_inventorys();
@@ -51,7 +51,7 @@ class Products extends Component {
     
       handleSearch = (e) => {
         const searchKey = e.currentTarget.value;
-        axios.get(`${window.backendapi2}/inventory/inventories`).then((res) => {
+        axios.get(`${window.backendapi2}/inventory`).then((res) => {
           if (res.data.success) {
             this.filterData(res.data.inventories, searchKey);
           }

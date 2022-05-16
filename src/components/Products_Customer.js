@@ -16,7 +16,7 @@ export default class Products_Customer extends Component {
 
   async retrive_inventorys() {
     await axios
-      .get(`${window.backendapi2}/inventory/inventories`)
+      .get(`${window.backendapi2}/inventory`)
       .then((res) => {
         if (res.data.success) {
           this.setState({
@@ -39,7 +39,7 @@ export default class Products_Customer extends Component {
 
   handleSearch = (e) => {
     const searchKey = e.currentTarget.value;
-    axios.get(`${window.backendapi2}/inventory/inventories`).then((res) => {
+    axios.get(`${window.backendapi2}/inventory`).then((res) => {
       if (res.data.success) {
         this.filterData(res.data.inventories, searchKey);
       }

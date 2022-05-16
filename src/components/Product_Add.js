@@ -45,7 +45,7 @@ export default function Product_Add() {
       inventoryImage: inventoryImage,
     };
     axios
-      .post(`${window.backendapi2}/inventory/inventory-insert`, data)
+      .post(`${window.backendapi2}/inventory`, data)
       .then((res) => {
         if (res.data.success) {
           alert("Added successfully!");

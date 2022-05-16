@@ -1,6 +1,11 @@
-FROM node:15.13-alpine
-WORKDIR /ctse
-ENV PATH="./node_modules/.bin:$PATH"
+FROM node:18-alpine3.14
+
+WORKDIR /app
+
 COPY . .
-RUN npm run build
-CMD [ "npm","start" ]
+
+RUN npm i
+
+EXPOSE 3000
+
+CMD [ "npm", "start" ]

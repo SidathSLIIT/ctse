@@ -19,7 +19,7 @@ export default function Product_Update() {
   
   const getResponse = () => {
     // console.log(id);
-    axios.get(`${window.backendapi2}/inventory/inventorydata/${id}`).then((res) =>{
+    axios.get(`${window.backendapi2}/inventory/${id}`).then((res) =>{
         if(res.data.success){
             setInventory(res.data.inventory)
 
@@ -38,7 +38,7 @@ export default function Product_Update() {
       inventoryImage: inventoryImage,
     };
     axios
-      .put(`${window.backendapi2}/inventory/updateinventory/${id}`, data)
+      .put(`${window.backendapi2}/inventory/${id}`, data)
       .then((res) => {
         if (res.data.success) {
           alert("Updated successfully");
