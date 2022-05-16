@@ -6,7 +6,7 @@ COPY package*.json ./
 
 COPY . .
 
-RUN npm i
+RUN yarn install
 
 EXPOSE 3000
 
